@@ -49,7 +49,7 @@ export const projects = [
       "An asynchronous AI platform that processes academic PDFs to generate modular lesson content and quizzes. Engineered with FastAPI, Celery, and Redis to handle non-blocking, compute-heavy processing.",
     tags: ["FastAPI", "Celery", "Redis", "AI Architecture"],
     image: "/placeholder-project.svg", // Update with your actual asset
-    liveUrl: "#",
+    liveUrl: "https://www.adaptivegrade.tech/",
     codeUrl: "#",
   },
   {

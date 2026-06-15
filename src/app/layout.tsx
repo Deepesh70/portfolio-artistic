@@ -17,7 +17,7 @@ const patrickHand = Patrick_Hand({
 });
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} — Creative Developer Portfolio`,
+  title: `${siteConfig.name} — Developer Portfolio`,
   description: siteConfig.description,
 };
 

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import Image from "next/image";
 import { siteConfig } from "@/lib/constants";
 import Button from "@/components/ui/Button";
 import HandDrawnArrow from "@/components/decorations/HandDrawnArrow";
@@ -119,7 +120,7 @@ export default function Hero() {
         {/* Right Column — Photo Placeholder */}
         <div className="relative flex justify-center">
           <div
-            className="hero-image relative w-64 h-64 md:w-80 md:h-80 border-[3px] border-pencil bg-erased/50 flex items-center justify-center"
+            className="hero-image relative w-64 h-64 md:w-80 md:h-80 border-[3px] border-pencil bg-erased/50 flex items-center justify-center overflow-hidden"
             style={{
               borderRadius: "30px 200px 20px 225px / 200px 30px 225px 20px",
               transform: "rotate(2deg)",
@@ -186,7 +187,13 @@ export default function Hero() {
             {/* <span className="font-body text-pencil/40 text-lg text-center px-4">
               [ Your Photo Here ]
             </span> */}
-            <img src="/images/me1.jpeg" alt={`Portrait of ${siteConfig.name}`} />
+            <Image
+              src="/images/me1.jpeg"
+              alt={`Portrait of ${siteConfig.name}`}
+              fill
+              className="object-cover"
+              preload={true}
+            />
           </div>
 
           <BouncingCircle className="absolute -bottom-4 -right-4 md:-right-10" />

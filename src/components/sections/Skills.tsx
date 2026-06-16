@@ -56,7 +56,7 @@ export default function Skills() {
             <div key={category.name} className="skill-category text-center">
               {/* Category label as sticky note */}
               <div
-                className="inline-block bg-white border-2 border-pencil px-5 py-2 mb-6 shadow-[3px_3px_0px_0px_#2d2d2d] font-heading text-xl"
+                className="inline-block bg-white border-2 border-pencil px-5 py-2 mb-6 sketch-shadow font-heading text-xl"
                 style={{
                   borderRadius: "255px 15px 225px 15px / 15px 225px 15px 255px",
                   transform: "rotate(-1deg)",

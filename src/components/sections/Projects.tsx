@@ -49,7 +49,7 @@ export default function Projects() {
           {projects.map((project, i) => (
             <div
               key={project.title}
-              className="project-card hover:rotate-1 hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(45,45,45,0.15)] transition-all duration-100"
+              className="project-card hover:rotate-1 hover:-translate-y-1 hover:sketch-shadow-subtle-lg transition-all duration-100"
             >
               <Card
                 decoration="tape"

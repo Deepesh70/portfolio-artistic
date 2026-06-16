@@ -22,9 +22,9 @@ export default function Button(props: ButtonProps) {
 
   const variants = {
     primary:
-      "bg-white text-pencil shadow-[4px_4px_0px_0px_#2d2d2d] hover:bg-marker hover:text-white hover:shadow-[2px_2px_0px_0px_#2d2d2d] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]",
+      "bg-white text-pencil sketch-shadow-lg hover:bg-marker hover:text-white hover:sketch-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]",
     secondary:
-      "bg-erased text-pencil shadow-[4px_4px_0px_0px_#2d2d2d] hover:bg-pen hover:text-white hover:shadow-[2px_2px_0px_0px_#2d2d2d] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]",
+      "bg-erased text-pencil sketch-shadow-lg hover:bg-pen hover:text-white hover:sketch-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]",
   };
 
   const style = {

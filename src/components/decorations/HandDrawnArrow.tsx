@@ -12,7 +12,7 @@ export default function HandDrawnArrow({ className = "" }: { className?: string 
     >
       <path
         d="M10 60 C30 65 50 50 70 35 C80 28 90 22 105 20"
-        stroke="#2d2d2d"
+        stroke="currentColor"
         strokeWidth="2.5"
         strokeDasharray="6 4"
         strokeLinecap="round"
@@ -20,7 +20,7 @@ export default function HandDrawnArrow({ className = "" }: { className?: string 
       />
       <path
         d="M95 12 L108 20 L96 28"
-        stroke="#2d2d2d"
+        stroke="currentColor"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"

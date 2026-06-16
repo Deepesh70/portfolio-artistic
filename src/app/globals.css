@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
-/* ── Hand-Drawn Design Tokens ── */
-@theme inline {
+/* ── Hand-Drawn Design Tokens (Light — default) ── */
+@theme {
   --color-paper: #fdfbf7;
   --color-pencil: #2d2d2d;
   --color-erased: #e5e0d8;
@@ -13,18 +13,48 @@
   --font-heading: var(--font-kalam);
   --font-body: var(--font-patrick-hand);
 
-  --shadow-hard: 4px 4px 0px 0px #2d2d2d;
-  --shadow-hard-lg: 8px 8px 0px 0px #2d2d2d;
-  --shadow-hard-sm: 2px 2px 0px 0px #2d2d2d;
-  --shadow-hard-subtle: 3px 3px 0px 0px rgba(45, 45, 45, 0.1);
+  --shadow-hard: 4px 4px 0px 0px var(--shadow-color);
+  --shadow-hard-lg: 8px 8px 0px 0px var(--shadow-color);
+  --shadow-hard-sm: 2px 2px 0px 0px var(--shadow-color);
+  --shadow-hard-subtle: 3px 3px 0px 0px var(--shadow-color-subtle);
 }
 
-/* ── Custom Properties for Wobbly Borders ── */
+/* ── Custom Properties ── */
 :root {
   --wobbly: 255px 15px 225px 15px / 15px 225px 15px 255px;
   --wobbly-md: 15px 225px 15px 255px / 255px 15px 225px 15px;
   --wobbly-sm: 185px 10px 195px 10px / 10px 195px 10px 185px;
   --wobbly-alt: 30px 200px 20px 225px / 200px 30px 225px 20px;
+
+  /* Shadow color token (light) */
+  --shadow-color: #2d2d2d;
+  --shadow-color-subtle: rgba(45, 45, 45, 0.1);
+  --shadow-color-hover: rgba(45, 45, 45, 0.15);
+
+  /* Dot pattern (light) */
+  --dot-color: #e5e0d8;
+
+  /* Tape (light) */
+  --tape-bg: rgba(200, 200, 180, 0.45);
+}
+
+/* ── Dark Theme Token Overrides ── */
+[data-theme="dark"] {
+  --color-paper: #000000;
+  --color-pencil: #d5cdc2;
+  --color-erased: #252540;
+  --color-marker: #ff6b6b;
+  --color-pen: #2d5da1;
+  --color-postit: #3d3822;
+  --color-white: #000000;
+
+  --shadow-color: rgba(0, 0, 0, 0.55);
+  --shadow-color-subtle: rgba(0, 0, 0, 0.3);
+  --shadow-color-hover: rgba(0, 0, 0, 0.35);
+
+  --dot-color: rgba(232, 224, 212, 0.04);
+
+  --tape-bg: rgba(232, 224, 212, 0.06);
 }
 
 /* ── Base Styles ── */
@@ -36,9 +66,35 @@ body {
   background-color: var(--color-paper);
   color: var(--color-pencil);
   font-family: var(--font-body);
-  background-image: radial-gradient(#e5e0d8 1px, transparent 1px);
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
   background-size: 24px 24px;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Sketch Shadow Utilities ── */
+@utility sketch-shadow-xs {
+  box-shadow: 1px 1px 0px 0px var(--shadow-color);
+}
+
+@utility sketch-shadow-sm {
+  box-shadow: 2px 2px 0px 0px var(--shadow-color);
+}
+
+@utility sketch-shadow {
+  box-shadow: 3px 3px 0px 0px var(--shadow-color);
+}
+
+@utility sketch-shadow-lg {
+  box-shadow: 4px 4px 0px 0px var(--shadow-color);
+}
+
+@utility sketch-shadow-subtle {
+  box-shadow: 3px 3px 0px 0px var(--shadow-color-subtle);
+}
+
+@utility sketch-shadow-subtle-lg {
+  box-shadow: 6px 6px 0px 0px var(--shadow-color-hover);
 }
 
 /* ── Wobbly Border Utilities ── */
@@ -67,7 +123,7 @@ body {
   transform: translateX(-50%) rotate(-2deg);
   width: 80px;
   height: 24px;
-  background: rgba(200, 200, 180, 0.45);
+  background: var(--tape-bg);
   border-radius: 2px;
   z-index: 10;
   pointer-events: none;
@@ -103,9 +159,12 @@ body {
   bottom: -4px;
   width: 100%;
   height: 6px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 6'%3E%3Cpath d='M0 3 Q5 0 10 3 T20 3' fill='none' stroke='%23ff4d4d' stroke-width='1.5'/%3E%3C/svg%3E")
-    repeat-x;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 6'%3E%3Cpath d='M0 3 Q5 0 10 3 T20 3' fill='none' stroke='%23ff4d4d' stroke-width='1.5'/%3E%3C/svg%3E") repeat-x;
   background-size: 20px 6px;
+}
+
+[data-theme="dark"] .wavy-underline::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 6'%3E%3Cpath d='M0 3 Q5 0 10 3 T20 3' fill='none' stroke='%23ff6b6b' stroke-width='1.5'/%3E%3C/svg%3E");
 }
 
 /* ── Drop Cap ── */
@@ -124,6 +183,11 @@ body {
 ::selection {
   background-color: var(--color-postit);
   color: var(--color-pencil);
+}
+
+[data-theme="dark"] ::selection {
+  background-color: var(--color-marker);
+  color: var(--color-paper);
 }
 
 /* ── Scrollbar Styling ── */
@@ -168,4 +232,10 @@ body {
 
 .animate-wiggle {
   animation: wiggle 0.3s ease-in-out;
+}
+
+/* ── Theme Transition Helpers ── */
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }

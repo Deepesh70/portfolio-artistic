@@ -133,7 +133,7 @@ export default function Contact() {
           {/* Form */}
           <div className="contact-form">
             <div
-              className="bg-white border-2 border-pencil p-6 md:p-8 shadow-[4px_4px_0px_0px_#2d2d2d]"
+              className="bg-white border-2 border-pencil p-6 md:p-8 sketch-shadow-lg"
               style={{
                 borderRadius: "15px 225px 15px 255px / 255px 15px 225px 15px",
               }}
@@ -242,7 +242,7 @@ export default function Contact() {
           {/* Contact Info */}
           <div className="contact-info flex flex-col justify-center gap-6">
             <div
-              className="bg-postit border-2 border-pencil p-6 shadow-[4px_4px_0px_0px_#2d2d2d]"
+              className="bg-postit border-2 border-pencil p-6 sketch-shadow-lg"
               style={{
                 borderRadius: "255px 15px 225px 15px / 15px 225px 15px 255px",
                 transform: "rotate(-1deg)",
@@ -294,7 +294,7 @@ export default function Contact() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white border-2 border-pencil flex items-center justify-center shadow-[3px_3px_0px_0px_#2d2d2d] hover:shadow-[1px_1px_0px_0px_#2d2d2d] hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-marker hover:text-white transition-all duration-100 font-body text-sm text-pencil capitalize"
+                  className="w-12 h-12 bg-white border-2 border-pencil flex items-center justify-center sketch-shadow hover:sketch-shadow-xs hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-marker hover:text-white transition-all duration-100 font-body text-sm text-pencil capitalize"
                   style={{
                     borderRadius: "60% 40% 55% 45% / 45% 60% 40% 55%",
                   }}

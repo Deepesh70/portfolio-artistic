@@ -135,7 +135,7 @@ export default function Hero() {
             >
               <path
                 d="M0 12 L0 0 L12 0"
-                stroke="#2d2d2d"
+                stroke="currentColor"
                 strokeWidth="3"
                 fill="none"
                 strokeLinecap="round"
@@ -149,7 +149,7 @@ export default function Hero() {
             >
               <path
                 d="M12 0 L24 0 L24 12"
-                stroke="#2d2d2d"
+                stroke="currentColor"
                 strokeWidth="3"
                 fill="none"
                 strokeLinecap="round"
@@ -163,7 +163,7 @@ export default function Hero() {
             >
               <path
                 d="M0 12 L0 24 L12 24"
-                stroke="#2d2d2d"
+                stroke="currentColor"
                 strokeWidth="3"
                 fill="none"
                 strokeLinecap="round"
@@ -177,7 +177,7 @@ export default function Hero() {
             >
               <path
                 d="M12 24 L24 24 L24 12"
-                stroke="#2d2d2d"
+                stroke="currentColor"
                 strokeWidth="3"
                 fill="none"
                 strokeLinecap="round"

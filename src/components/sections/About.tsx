@@ -104,7 +104,7 @@ export default function About() {
           {stats.map((stat, i) => (
             <div key={stat.label} className="flex flex-col items-center">
               <div
-                className="stat-circle h-24 w-24 md:h-32 md:w-32 border-[3px] border-pencil bg-white flex flex-col items-center justify-center shadow-[3px_3px_0px_0px_rgba(45,45,45,0.1)]"
+                className="stat-circle h-24 w-24 md:h-32 md:w-32 border-[3px] border-pencil bg-white flex flex-col items-center justify-center sketch-shadow-subtle"
                 style={{ borderRadius: organicRadii[i % organicRadii.length] }}
               >
                 <span

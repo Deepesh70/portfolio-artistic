@@ -12,7 +12,7 @@ export default function SquigglyLine({ className = "" }: { className?: string })
     >
       <path
         d="M2 0 C4 15 0 30 2 45 C4 60 0 75 2 90 C4 105 0 120 2 135 C4 150 0 165 2 180 C4 195 2 200 2 200"
-        stroke="#2d2d2d"
+        stroke="currentColor"
         strokeWidth="2"
         strokeDasharray="4 6"
         strokeLinecap="round"
